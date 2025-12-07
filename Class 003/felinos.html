@@ -4,15 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animales Felinos - Enciclopedia</title>
+    <link rel="stylesheet" href="felinos-styles.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
@@ -369,13 +363,13 @@
         <p>Descubre la diversidad y características de los felinos del mundo</p>
     </header>
 
-    <!-- Navigation -->
+    <!-- Navigation (traditional links that reload the page) -->
     <nav>
         <ul>
-            <li><a href="#" onclick="showSection('felinos-generales', event)" class="nav-link active">Felinos Generales</a></li>
-            <li><a href="#" onclick="showSection('felinos-grandes', event)" class="nav-link">Felinos Grandes</a></li>
-            <li><a href="#" onclick="showSection('felinos-pequenos', event)" class="nav-link">Felinos Pequeños</a></li>
-            <li><a href="#" onclick="showSection('mi-informacion', event)" class="nav-link">Mi Información</a></li>
+            <li><a href="felinos.html" class="nav-link active">Felinos Generales</a></li>
+            <li><a href="felinos-grandes.html" class="nav-link">Felinos Grandes</a></li>
+            <li><a href="felinos-pequenos.html" class="nav-link">Felinos Pequeños</a></li>
+            <li><a href="mi-informacion.html" class="nav-link">Mi Información</a></li>
         </ul>
     </nav>
 
@@ -645,60 +639,7 @@
             </div>
         </section>
 
-        <!-- Section 4: Mi Información Personal -->
-        <section id="mi-informacion" class="section">
-            <div class="section-content">
-                <h2>Mi Información Personal</h2>
-                
-                <div class="edit-note">
-                    <strong>📝 Instrucciones para editar:</strong>
-                    Abre este archivo HTML con un editor de texto (Notepad, VS Code, etc.) y busca la sección "EDITAR AQUÍ" más abajo para modificar tu información personal.
-                </div>
-
-                <div class="profile-header">
-                    <div class="profile-avatar">👤</div>
-                    <div class="profile-info">
-                        <h3 id="nombre-perfil">Stefany Espin</h3>
-                    </div>
-                </div>
-
-                <div class="highlight-box">
-                    <strong style="color: #d4af37;">Aplicaciones Web</strong>
-                                        <pre style="background-color: #f0f0f0; padding: 1rem; border-radius: 3px; overflow-x: auto;">Stefany Espin - espin-2025-b-sdes-web-gr1</pre>
-
-    <script>
-        // Función para cambiar de sección
-        function showSection(sectionId, event) {
-            event.preventDefault();
-            
-            // Ocultar todas las secciones
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Mostrar la sección seleccionada
-            const selectedSection = document.getElementById(sectionId);
-            if (selectedSection) {
-                selectedSection.classList.add('active');
-            }
-            
-            // Actualizar estado de los enlaces de navegación
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-            });
-            
-            event.target.classList.add('active');
-            
-            // Scroll suave al inicio de la página
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Inicializar: la primera sección está activa por defecto
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Página cargada - Felinos Generales activa por defecto');
-        });
-    </script>
+       
+    <script src="felinos.js"></script>
 </body>
 </html>
