@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Básico - Conceptos y Ejemplos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">HTML Básico 101</h1>
+            <ul class="nav-menu">
+                <li><a href="#documentos">Documentos</a></li>
+                <li><a href="#headings">Headings</a></li>
+                <li><a href="#parrafos">Párrafos</a></li>
+                <li><a href="#links">Links</a></li>
+                <li><a href="#imagenes">Imágenes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Aprende HTML Básico</h1>
+            <p>Conceptos fundamentales con ejemplos prácticos</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Sección: Declaración DOCTYPE -->
+        <section id="documentos" class="concept-section">
+            <div class="concept-header">
+                <h2>HTML Documents - La Declaración DOCTYPE</h2>
+                <span class="concept-tag">Fundamental</span>
+            </div>
+            
+            <div class="concept-content">
+                <h3>¿Qué es DOCTYPE?</h3>
+                <p>La declaración <code>&lt;!DOCTYPE&gt;</code> representa el tipo de documento y ayuda a los navegadores a mostrar las páginas web correctamente.</p>
+                
+                <div class="info-box">
+                    <h4>Reglas Importantes:</h4>
+                    <ul>
+                        <li>Debe aparecer una sola vez, al inicio de la página</li>
+                        <li>Debe ir antes de cualquier etiqueta HTML</li>
+                        <li>No es sensible a mayúsculas/minúsculas</li>
+                    </ul>
+                </div>
+
+                <h3>Estructura Básica de un Documento HTML</h3>
+                <div class="example">
+                    <div class="example-header">Ejemplo 1: Estructura Básica</div>
+                    <div class="example-code">
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Mi Primera Página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Mi Primer Encabezado&lt;/h1&gt;
+    &lt;p&gt;Mi primer párrafo.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                    <div class="example-result">
+                        <h4>Resultado:</h4>
+                        <div class="demo-box">
+                            <h1>Mi Primer Encabezado</h1>
+                            <p>Mi primer párrafo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Headings -->
+        <section id="headings" class="concept-section">
+            <div class="concept-header">
+                <h2>HTML Headings - Encabezados</h2>
+                <span class="concept-tag">Estructura</span>
+            </div>
+
+            <div class="concept-content">
+                <h3>¿Qué son los Headings?</h3>
+                <p>Los encabezados HTML se definen con las etiquetas <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>.</p>
+                
+                <div class="info-box">
+                    <h4>Jerarquía de Headings:</h4>
+                    <ul>
+                        <li><code>&lt;h1&gt;</code> - Encabezado más importante (normalmente el título principal)</li>
+                        <li><code>&lt;h2&gt;</code> - Encabezado secundario</li>
+                        <li><code>&lt;h3&gt;</code> a <code>&lt;h6&gt;</code> - Encabezados de menor importancia</li>
+                    </ul>
+                </div>
+
+                <h3>Ejemplos de Headings</h3>
+                
+                <div class="example">
+                    <div class="example-header">Ejemplo 2a: Comparación Visual de Tamaños</div>
+                    <div class="example-code">
+                        <pre><code>&lt;h1&gt;Esto es un heading 1&lt;/h1&gt;
+&lt;h2&gt;Esto es un heading 2&lt;/h2&gt;
+&lt;h3&gt;Esto es un heading 3&lt;/h3&gt;
+&lt;h4&gt;Esto es un heading 4&lt;/h4&gt;
+&lt;h5&gt;Esto es un heading 5&lt;/h5&gt;
+&lt;h6&gt;Esto es un heading 6&lt;/h6&gt;</code></pre>
+                    </div>
+                    <div class="example-result">
+                        <h4>Resultado:</h4>
+                        <div class="demo-box">
+                            <h1 style="margin-top: 0;">Esto es un heading 1</h1>
+                            <h2>Esto es un heading 2</h2>
+                            <h3>Esto es un heading 3</h3>
+                            <h4>Esto es un heading 4</h4>
+                            <h5>Esto es un heading 5</h5>
+                            <h6>Esto es un heading 6</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <div class="example-header">Ejemplo 2b: Estructura Jerárquica de una Página</div>
+                    <p style="color: #7f8c8d; margin-bottom: 1rem; font-style: italic;">Muestra cómo se usan los headings en una estructura real:</p>
+                    <div class="example-code">
+                        <pre><code>&lt;h1&gt;Bienvenido a Mi Blog&lt;/h1&gt;
+&lt;!-- Contenido principal --&gt;
+
+&lt;h2&gt;¿Qué es HTML?&lt;/h2&gt;
+&lt;p&gt;HTML es un lenguaje de marcado...&lt;/p&gt;
+
+&lt;h2&gt;Historia del HTML&lt;/h2&gt;
+&lt;h3&gt;HTML versión 1.0&lt;/h3&gt;
+&lt;p&gt;Fue la primera versión...&lt;/p&gt;
+
+&lt;h3&gt;HTML versión 5&lt;/h3&gt;
+&lt;p&gt;La versión más reciente...&lt;/p&gt;
+
+&lt;h2&gt;Características Principales&lt;/h2&gt;
+&lt;h3&gt;Compatibilidad&lt;/h3&gt;
+&lt;h4&gt;Navegadores modernos&lt;/h4&gt;
+&lt;p&gt;HTML5 es soportado por...&lt;/p&gt;</code></pre>
+                    </div>
+                    <div class="example-result">
+                        <h4>Resultado:</h4>
+                        <div class="demo-box" style="background: white;">
+                            <h1 style="margin-top: 0; border-bottom: 3px solid #3498db; padding-bottom: 0.5rem;">Bienvenido a Mi Blog</h1>
+                            
+                            <h2 style="margin-top: 1.5rem;">¿Qué es HTML?</h2>
+                            <p style="color: #2c3e50;">HTML es un lenguaje de marcado...</p>
+                            
+                            <h2>Historia del HTML</h2>
+                            <h3>HTML versión 1.0</h3>
+                            <p style="color: #2c3e50;">Fue la primera versión...</p>
+                            
+                            <h3>HTML versión 5</h3>
+                            <p style="color: #2c3e50;">La versión más reciente...</p>
+                            
+                            <h2>Características Principales</h2>
+                            <h3>Compatibilidad</h3>
+                            <h4>Navegadores modernos</h4>
+                            <p style="color: #2c3e50;">HTML5 es soportado por...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <div class="example-header">Ejemplo 2c: Caso de Uso Real - Artículo de Noticias</div>
+                    <p style="color: #7f8c8d; margin-bottom: 1rem; font-style: italic;">Estructura típica de un artículo o noticia:</p>
+                    <div class="example-code">
+                        <pre><code>&lt;h1&gt;Descubren nueva especie de mariposa en la Amazonía&lt;/h1&gt;
+
+&lt;h2&gt;Introducción&lt;/h2&gt;
+&lt;p&gt;Científicos han descubierto una nueva especie...&lt;/p&gt;
+
+&lt;h2&gt;Características Principales&lt;/h2&gt;
+&lt;h3&gt;Tamaño y Color&lt;/h3&gt;
+&lt;p&gt;La mariposa tiene una envergadura de...&lt;/p&gt;
+
+&lt;h3&gt;Hábitat Natural&lt;/h3&gt;
+&lt;p&gt;Se encuentra únicamente en regiones...&lt;/p&gt;
+
+&lt;h2&gt;Importancia Científica&lt;/h2&gt;
+&lt;p&gt;Este descubrimiento es importante porque...&lt;/p&gt;</code></pre>
+                    </div>
+                    <div class="example-result">
+                        <h4>Resultado:</h4>
+                        <div class="demo-box" style="background: white;">
+                            <h1 style="margin-top: 0; color: #e74c3c;">Descubren nueva especie de mariposa en la Amazonía</h1>
+                            
+                            <h2>Introducción</h2>
+                            <p style="color: #2c3e50;">Científicos han descubierto una nueva especie...</p>
+                            
+                            <h2>Características Principales</h2>
+                            <h3>Tamaño y Color</h3>
+                            <p style="color: #2c3e50;">La mariposa tiene una envergadura de...</p>
+                            
+                            <h3>Hábitat Natural</h3>
+                            <p style="color: #2c3e50;">Se encuentra únicamente en regiones...</p>
+                            
+                            <h2>Importancia Científica</h2>
+                            <p style="color: #2c3e50;">Este descubrimiento es importante porque...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 2rem;">
+                    <h4>📊 Tabla de Uso Recomendado:</h4>
+                    <table style="width: 100%; margin-top: 1rem; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background: #3498db; color: white;">
+                                <th style="padding: 0.8rem; text-align: left;">Encabezado</th>
+                                <th style="padding: 0.8rem; text-align: left;">Uso Típico</th>
+                                <th style="padding: 0.8rem; text-align: left;">Ejemplo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 0.8rem;"><code>&lt;h1&gt;</code></td>
+                                <td style="padding: 0.8rem;">Título principal de la página</td>
+                                <td style="padding: 0.8rem;">Nombre del sitio o título del artículo</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd; background: #f8f9fa;">
+                                <td style="padding: 0.8rem;"><code>&lt;h2&gt;</code></td>
+                                <td style="padding: 0.8rem;">Secciones principales</td>
+                                <td style="padding: 0.8rem;">Capítulos, temas principales</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 0.8rem;"><code>&lt;h3&gt;</code></td>
+                                <td style="padding: 0.8rem;">Subsecciones</td>
+                                <td style="padding: 0.8rem;">Subtemas, detalles de un tema</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd; background: #f8f9fa;">
+                                <td style="padding: 0.8rem;"><code>&lt;h4&gt;</code></td>
+                                <td style="padding: 0.8rem;">Subdivisiones menores</td>
+                                <td style="padding: 0.8rem;">Puntos dentro de una subsección</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 0.8rem;"><code>&lt;h5&gt; y &lt;h6&gt;</code></td>
+                                <td style="padding: 0.8rem;">Raramente se utilizan</td>
+                                <td style="padding: 0.8rem;">Detalles muy específicos o secundarios</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Párrafos -->
+        <section id="parrafos" class="concept-section">
+            <div class="concept-header">
+                <h2>HTML Paragraphs - Párrafos</h2>
+                <span class="concept-tag">Contenido</span>
+            </div>
+
+            <div class="concept-content">
+                <h3>¿Qué son los Párrafos?</h3>
+                <p>Los párrafos HTML se definen con la etiqueta <code>&lt;p&gt;</code>.</p>
+
+                <h3>Ejemplos de Párrafos</h3>
+                <div class="example">
+                    <div class="example-header">Ejemplo 3: Múltiples Párrafos</div>
+                    <div class="example-code">
+                        <pre><code>&lt;p&gt;Este es un párrafo.&lt;/p&gt;
+&lt;p&gt;Este es otro párrafo.&lt;/p&gt;
+&lt;p&gt;Y este es un tercer párrafo.&lt;/p&gt;</code></pre>
+                    </div>
+                    <div class="example-result">
+                        <h4>Resultado:</h4>
+                        <div class="demo-box">
+                            <p>Este es un párrafo.</p>
+                            <p>Este es otro párrafo.</p>
+                            <p>Y este es un tercer párrafo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Links -->
+        <section id="links" class="concept-section">
+            <div class="concept-header">
+                <h2>HTML Links - Enlaces</h2>
+                <span class="concept-tag">Interactividad</span>
+            </div>
+
+            <div class="concept-content">
+                <h3>¿Qué son los Links?</h3>
+                <p>Los enlaces HTML se definen con la etiqueta <code>&lt;a&gt;</code>.</p>
+
+                <div class="info-box">
+                    <h4>El Atributo href:</h4>
+                    <ul>
+                        <li>El destino del enlace se especifica en el atributo <code>href</code></li>
+                        <li>Puede ser una URL completa (https://www.ejemplo.com) o una ruta relativa (/pagina.html)</li>
+                    </ul>
+                </div>
+
+                <h3>Ejemplos de Links</h3>
+                <div class="example">
+                    <div class="example-header">Ejemplo 4: Enlaces Básicos</div>
+                    <div class="example-code">
+                        <pre><code>&lt;a href="https://www.w3schools.com"&gt;Este es un link&lt;/a&gt;
+&lt;a href="/pagina-local.html"&gt;Link a página local&lt;/a&gt;
+&lt;a href="mailto:ejemplo@correo.com"&gt;Enviar correo&lt;/a&gt;</code></pre>
+                    </div>
+                    <div class="example-result">
+                        <h4>Resultado:</h4>
+                        <div class="demo-box">
+                            <a href="https://www.w3schools.com" target="_blank">Este es un link</a>
+                            <br><br>
+                            <a href="#" onclick="alert('Link a página local')">Link a página local</a>
+                            <br><br>
+                            <a href="mailto:ejemplo@correo.com">Enviar correo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Imágenes -->
+        <section id="imagenes" class="concept-section">
+            <div class="concept-header">
+                <h2>HTML Images - Imágenes</h2>
+                <span class="concept-tag">Multimedia</span>
+            </div>
+
+            <div class="concept-content">
+                <h3>¿Qué son las Imágenes en HTML?</h3>
+                <p>Las imágenes HTML se definen con la etiqueta <code>&lt;img&gt;</code>.</p>
+
+                <div class="info-box">
+                    <h4>Atributos Importantes:</h4>
+                    <ul>
+                        <li><code>src</code> - Especifica la ruta de la imagen</li>
+                        <li><code>alt</code> - Texto alternativo si la imagen no carga</li>
+                        <li><code>width</code> - Ancho de la imagen (en píxeles)</li>
+                        <li><code>height</code> - Alto de la imagen (en píxeles)</li>
+                    </ul>
+                </div>
+
+                <h3>Ejemplos de Imágenes</h3>
+                <div class="example">
+                    <div class="example-header">Ejemplo 5: Etiqueta IMG</div>
+                    <div class="example-code">
+                        <pre><code>&lt;!-- Imagen con ruta absoluta --&gt;
+&lt;img src="https://via.placeholder.com/200" alt="Imagen de ejemplo" width="200" height="150"&gt;
+
+&lt;!-- Imagen con ruta relativa --&gt;
+&lt;img src="./images/foto.jpg" alt="Mi foto" width="300" height="200"&gt;
+
+&lt;!-- Imagen como enlace --&gt;
+&lt;a href="https://www.w3schools.com"&gt;
+  &lt;img src="./images/w3schools-logo.png" alt="W3Schools"&gt;
+&lt;/a&gt;</code></pre>
+                    </div>
+                    <div class="example-result">
+                        <h4>Resultado:</h4>
+                        <div class="demo-box">
+                            <img src="https://via.placeholder.com/200" alt="Imagen de ejemplo" width="200" height="150">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Resumen -->
+        <section id="resumen" class="concept-section">
+            <div class="concept-header">
+                <h2>Resumen - Elementos HTML Básicos</h2>
+                <span class="concept-tag">Referencia</span>
+            </div>
+
+            <div class="concept-content">
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th>Elemento</th>
+                            <th>Descripción</th>
+                            <th>Ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;!DOCTYPE&gt;</code></td>
+                            <td>Define el tipo de documento</td>
+                            <td><code>&lt;!DOCTYPE html&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;html&gt;</code></td>
+                            <td>Elemento raíz del documento</td>
+                            <td><code>&lt;html&gt;...&lt;/html&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;head&gt;</code></td>
+                            <td>Información sobre el documento</td>
+                            <td><code>&lt;head&gt;...&lt;/head&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;title&gt;</code></td>
+                            <td>Título de la página</td>
+                            <td><code>&lt;title&gt;Mi Página&lt;/title&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;body&gt;</code></td>
+                            <td>Contenido visible de la página</td>
+                            <td><code>&lt;body&gt;...&lt;/body&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;h1&gt; a &lt;h6&gt;</code></td>
+                            <td>Encabezados</td>
+                            <td><code>&lt;h1&gt;Título&lt;/h1&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;p&gt;</code></td>
+                            <td>Párrafo</td>
+                            <td><code>&lt;p&gt;Texto&lt;/p&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;a&gt;</code></td>
+                            <td>Enlace</td>
+                            <td><code>&lt;a href="#"&gt;Link&lt;/a&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;img&gt;</code></td>
+                            <td>Imagen</td>
+                            <td><code>&lt;img src="foto.jpg" alt="Foto"&gt;</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 HTML Básico 101 - Página educativa creada por Stefany Espin</p>
+        <p>Basado en conceptos de <a href="https://www.w3schools.com/html/html_basic.asp" target="_blank">W3Schools</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
