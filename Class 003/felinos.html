@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animales Felinos - Enciclopedia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #6b6b6b;
+            color: #ffffff;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #d9d9d9;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #8a8a8a;
+            padding: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #ffffff;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav ul li a:hover {
+            background-color: #6b6b6b;
+            border-bottom-color: #d4af37;
+        }
+
+        nav ul li a.active {
+            background-color: #5a5a5a;
+            border-bottom-color: #d4af37;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Sections */
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Content Sections */
+        .section-content {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .section-content h2 {
+            color: #6b6b6b;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 1rem;
+        }
+
+        .section-content h3 {
+            color: #8a8a8a;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .section-content p {
+            margin-bottom: 1rem;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Animals Grid */
+        .animals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .animal-card {
+            background-color: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .animal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            border-color: #d4af37;
+        }
+
+        .animal-card h4 {
+            color: #6b6b6b;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .animal-card p {
+            color: #777;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .animal-card .info-label {
+            color: #8a8a8a;
+            font-weight: bold;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        /* Characteristics Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            background-color: #f9f9f9;
+        }
+
+        table th {
+            background-color: #8a8a8a;
+            color: #ffffff;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table tr:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Personal Info Styles */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8a8a8a 0%, #6b6b6b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-info h3 {
+            color: #6b6b6b;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .profile-info p {
+            color: #777;
+            margin: 0.5rem 0;
+        }
+
+        .edit-button {
+            background-color: #d4af37;
+            color: #333;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 1rem;
+        }
+
+        .edit-button:hover {
+            background-color: #b89c2e;
+            transform: translateY(-2px);
+        }
+
+        .info-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            border-left: 4px solid #d4af37;
+            border-radius: 5px;
+        }
+
+        .info-section h4 {
+            color: #6b6b6b;
+            margin-bottom: 1rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .info-item {
+            background-color: #ffffff;
+            padding: 1rem;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .info-item-label {
+            color: #8a8a8a;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item-value {
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        .highlight-box {
+            background-color: #f0f0f0;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border: 2px dashed #d4af37;
+        }
+
+        .edit-note {
+            background-color: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            color: #856404;
+        }
+
+        .edit-note strong {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #6b6b6b;
+            color: #ffffff;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li a {
+                text-align: center;
+                border-bottom: none;
+                border-left: 3px solid transparent;
+            }
+
+            nav ul li a.active,
+            nav ul li a:hover {
+                border-bottom: none;
+                border-left-color: #d4af37;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .section-content {
+                padding: 1.5rem;
+            }
+
+            .animals-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>🐆 Animales Felinos</h1>
+        <p>Descubre la diversidad y características de los felinos del mundo</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('felinos-generales', event)" class="nav-link active">Felinos Generales</a></li>
+            <li><a href="#" onclick="showSection('felinos-grandes', event)" class="nav-link">Felinos Grandes</a></li>
+            <li><a href="#" onclick="showSection('felinos-pequenos', event)" class="nav-link">Felinos Pequeños</a></li>
+            <li><a href="#" onclick="showSection('mi-informacion', event)" class="nav-link">Mi Información</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Section 1: Felinos Generales -->
+        <section id="felinos-generales" class="section active">
+            <div class="section-content">
+                <h2>Felinos: Información General</h2>
+                
+                <p>
+                    Los felinos (familia Felidae) son mamíferos carnívoros con una larga historia evolutiva que se remonta 
+                    millones de años. Son depredadores altamente especializados, adaptados para la caza con características 
+                    físicas y sensoriales excepcionales.
+                </p>
+
+                <h3>Características Generales</h3>
+                <p>
+                    Todos los felinos comparten características comunes que los hacen depredadores efectivos:
+                </p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Visión</td>
+                            <td>Excepcional en condiciones de baja luz, con visión nocturna 6 veces superior a la humana</td>
+                        </tr>
+                        <tr>
+                            <td>Audición</td>
+                            <td>Extremadamente sensible, puede escuchar frecuencias hasta 64 kHz</td>
+                        </tr>
+                        <tr>
+                            <td>Olfato</td>
+                            <td>Muy desarrollado, utilizado para comunicación y localización de presas</td>
+                        </tr>
+                        <tr>
+                            <td>Dientes</td>
+                            <td>Colmillos caninos largos para perforar la médula espinal de las presas</td>
+                        </tr>
+                        <tr>
+                            <td>Garras</td>
+                            <td>Retráctiles, excepto en el guepardo, utilizadas para trepar y cazar</td>
+                        </tr>
+                        <tr>
+                            <td>Cuerpo</td>
+                            <td>Musculoso y flexible, diseñado para velocidad y agilidad</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Clasificación</h3>
+                <p>
+                    Los felinos se pueden clasificar de varias formas. Una clasificación común es:
+                </p>
+
+                <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                    <li><strong>Felinos Grandes:</strong> Leones, tigres, leopardos, jaguares y pumas</li>
+                    <li><strong>Felinos Medianos:</strong> Linces, ocelotes y servales</li>
+                    <li><strong>Felinos Pequeños:</strong> Gatos salvajes, gatos domésticos y otros</li>
+                </ul>
+
+                <h3>Hábitat y Distribución</h3>
+                <p>
+                    Los felinos se encuentran en prácticamente todos los continentes excepto en la Antártida y Australia 
+                    (aunque históricamente no estuvieron allí de forma nativa). Habitan desde selvas tropicales hasta desiertos, 
+                    bosques templados y regiones montañosas. Son principalmente crepusculares y nocturnos, lo que les permite 
+                    aprovechar sus excelentes sentidos en condiciones de baja luz.
+                </p>
+
+                <h3>Comportamiento</h3>
+                <p>
+                    A diferencia de otros grandes carnívoros, la mayoría de los felinos son solitarios y territoriales. 
+                    El león es una excepción notable, siendo el único felino realmente social que vive en manadas llamadas melenas. 
+                    Utilizan marcas de olor, arañazos en árboles y vocalizaciones para establecer y mantener sus territorios.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: Felinos Grandes -->
+        <section id="felinos-grandes" class="section">
+            <div class="section-content">
+                <h2>Felinos Grandes del Mundo</h2>
+                
+                <p>
+                    Los felinos grandes son los depredadores más poderosos de sus ecosistemas. Con excepción del león, 
+                    son principalmente solitarios y ocupan territorios extensos. Estos felinos pueden alcanzar velocidades 
+                    impresionantes y poseen la fuerza necesaria para derribar grandes presas.
+                </p>
+
+                <div class="animals-grid">
+                    <div class="animal-card">
+                        <h4>🦁 León</h4>
+                        <p>
+                            El león es el único felino verdaderamente social. Los machos son famosos por su melena característica, 
+                            que indica su estatus y salud. Viven en manadas y son cazadores colaborativos en África y una pequeña 
+                            población en India.
+                        </p>
+                        <div class="info-label">Peso: 160-250 kg</div>
+                        <div class="info-label">Velocidad: 80 km/h</div>
+                    </div>
+
+                    <div class="animal-card">
+                        <h4>🐯 Tigre</h4>
+                        <p>
+                            El tigre es el felino más grande del mundo. Sus rayas anaranjadas y negras son únicas para cada individuo. 
+                            Son cazadores solitarios que habitan en Asia, especialmente en bosques y manglares. Es un nadador 
+                            excepcional.
+                        </p>
+                        <div class="info-label">Peso: 200-300 kg</div>
+                        <div class="info-label">Velocidad: 65 km/h</div>
+                    </div>
+
+                    <div class="animal-card">
+                        <h4>🐆 Leopardo</h4>
+                        <p>
+                            El leopardo es un cazador versátil y ágil. Sus manchas rosáceas llamadas rosetas lo distinguen del jaguar. 
+                            Son excelentes trepadores y a menudo arrastran sus presas a los árboles para comerlas sin competencia. 
+                            Habitan en África y Asia.
+                        </p>
+                        <div class="info-label">Peso: 30-90 kg</div>
+                        <div class="info-label">Velocidad: 75 km/h</div>
+                    </div>
+
+                    <div class="animal-card">
+                        <h4>🐆 Jaguar</h4>
+                        <p>
+                            El jaguar es más robusto que el leopardo y es el felino más grande de América. Su mandíbula es más 
+                            fuerte que la de otros grandes felinos, permitiéndole cazar presas blindadas como armadillos y caimanes. 
+                            Habita en selvas tropicales y zonas húmedas.
+                        </p>
+                        <div class="info-label">Peso: 100-160 kg</div>
+                        <div class="info-label">Velocidad: 50 km/h</div>
+                    </div>
+
+                    <div class="animal-card">
+                        <h4>🐱 Puma (Cougar)</h4>
+                        <p>
+                            El puma es un felino versátil con la mayor distribución geográfica de cualquier mamífero terrestre salvaje 
+                            en las Américas. Pueden vivir en diversos hábitats desde montañas hasta desiertos. Son cazadores ágiles 
+                            con una excelente capacidad de salto.
+                        </p>
+                        <div class="info-label">Peso: 30-100 kg</div>
+                        <div class="info-label">Velocidad: 60 km/h</div>
+                    </div>
+
+                    <div class="animal-card">
+                        <h4>🏃 Guepardo</h4>
+                        <p>
+                            El guepardo es el animal terrestre más rápido del planeta. A diferencia de otros felinos, sus garras 
+                            son no retráctiles, como los picos de un atleta. Tiene un cuerpo esbelto y una cola larga para el equilibrio 
+                            durante los giros de alta velocidad. Habita principalmente en África.
+                        </p>
+                        <div class="info-label">Peso: 35-65 kg</div>
+                        <div class="info-label">Velocidad: 120 km/h</div>
+                    </div>
+                </div>
+
+                <h3>Comportamiento de Caza</h3>
+                <p>
+                    Los grandes felinos utilizan diferentes estrategias de caza según su presa y hábitat. Algunos son cazadores 
+                    de emboscada que se acercan sigilosamente, mientras que otros utilizan la velocidad. La mayoría tiene éxito en 
+                    menos del 25% de sus intentos de caza, lo que hace que cada captura sea vital.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 3: Felinos Pequeños -->
+        <section id="felinos-pequenos" class="section">
+            <div class="section-content">
+                <h2>Felinos Pequeños y Medianos</h2>
+                
+                <p>
+                    Los felinos pequeños y medianos son cazadores especializados de pequeñas presas como roedores, pájaros, 
+                    insectos y otros animales pequeños. Aunque menos conocidos que los grandes felinos, son depredadores 
+                    igualmente especializados y ocupan nichos ecológicos importantes en sus ecosistemas.
+                </p>
+
+                <div class="animals-grid">
+                    <div class="animal-card">
+                        <h4>🐱 Gato Doméstico</h4>
+                        <p>
+                            Descendiente del gato salvaje africano, ha sido domesticado durante miles de años. Son cazadores 
+                            altamente efectivos de pequeños roedores. Tienen un rango de vocalización amplio y son principalmente 
+                            nocturnos. Han colonizado prácticamente todos los continentes habitados.
+                        </p>
+                        <div class="info-label">Peso: 3-5 kg</div>
+                        <div class="info-label">Velocidad: 50 km/h</div>
+                    </div>
+
+                    <div class="animal-card">
+                        <h4>🐈 Lince</h4>
+                        <p>
+                            El lince es un felino mediano con características distintivas como orejas puntiagudas con pinceles 
+                            de pelo y patillas faciales. Excelentes cazadores adaptados a climas fríos, habitan en Europa, Asia 
+                            y América del Norte. Algunas poblaciones están siendo reintroducidas en sus hábitats naturales.
+                        </p>
+                        <div class="info-label">Peso: 18-30 kg</div>
+                        <div class="info-label">Velocidad: 80 km/h</div>
+                    </div>
+
+                    <div class="animal-card">
+                        <h4>🐱 Serval</h4>
+                        <p>
+                            El serval es un felino mediano africano con patas largas adaptadas para saltar entre la hierba alta 
+                            de la sabana. Tiene un excelente sentido del oído y es principalmente nocturno. Es un cazador de precisión 
+                            especializado en pequeños roedores y pájaros.
+                        </p>
+                        <div class="info-label">Peso: 9-18 kg</div>
+                        <div class="info-label">Velocidad: 60 km/h</div>
+                    </div>
+
+                    <div class="animal-card">
+                        <h4>🐆 Ocelote</h4>
+                        <p>
+                            El ocelote es un felino pequeño pero robusto de América Central y del Sur. Tiene un patrón de manchas 
+                            y rayas distintivo. Son cazadores nocturnos activos principalmente en el suelo, aunque también trepa 
+                            árboles. Ocupan una variedad de hábitats desde bosques hasta áreas semiáridas.
+                        </p>
+                        <div class="info-label">Peso: 1.5-3 kg</div>
+                        <div class="info-label">Velocidad: 42 km/h</div>
+                    </div>
+
+                    <div class="animal-card">
+                        <h4>🐱 Gato Salvaje</h4>
+                        <p>
+                            El gato salvaje africano es el ancestro del gato doméstico. Muy similar en tamaño pero más robusto 
+                            y salvaje en comportamiento. Es un cazador altamente efectivo de roedores y es principalmente nocturno. 
+                            Habita principalmente en sabanas africanas.
+                        </p>
+                        <div class="info-label">Peso: 1.3-2.5 kg</div>
+                        <div class="info-label">Velocidad: 48 km/h</div>
+                    </div>
+
+                    <div class="animal-card">
+                        <h4>🐱 Margay</h4>
+                        <p>
+                            El margay es un pequeño felino neotropical adaptado a la vida en los árboles. Tiene garras semiretráctiles 
+                            y puede girar sus tobillos para un mejor agarre. Principalmente nocturno, caza pequeños roedores, aves 
+                            e insectos. Es especialmente activo en el dosel del bosque tropical.
+                        </p>
+                        <div class="info-label">Peso: 1.5-3 kg</div>
+                        <div class="info-label">Velocidad: 40 km/h</div>
+                    </div>
+                </div>
+
+                <h3>Adaptaciones Especiales</h3>
+                <p>
+                    Los felinos pequeños han desarrollado adaptaciones especializadas para sus nichos particulares. Algunos 
+                    tienen patas más largas para cazar en hierba alta, otros tienen orejas más grandes para mejor audición, 
+                    y algunos son exceptionales trepadores. Su pequeño tamaño les permite ocupar nichos que los grandes felinos 
+                    no pueden explotar, haciéndolos depredadores muy efectivos en sus respectivos hábitats.
+                </p>
+
+                <h3>Conservación</h3>
+                <p>
+                    Muchas especies de felinos pequeños enfrentan amenazas de pérdida de hábitat y fragmentación. La protección 
+                    de corredores ecológicos y la conservación de sus hábitats naturales son cruciales para la supervivencia de 
+                    estas especies. La investigación continua sobre sus ecologías y comportamientos es esencial para desarrollar 
+                    estrategias de conservación efectivas.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 4: Mi Información Personal -->
+        <section id="mi-informacion" class="section">
+            <div class="section-content">
+                <h2>Mi Información Personal</h2>
+                
+                <div class="edit-note">
+                    <strong>📝 Instrucciones para editar:</strong>
+                    Abre este archivo HTML con un editor de texto (Notepad, VS Code, etc.) y busca la sección "EDITAR AQUÍ" más abajo para modificar tu información personal.
+                </div>
+
+                <div class="profile-header">
+                    <div class="profile-avatar">👤</div>
+                    <div class="profile-info">
+                        <h3 id="nombre-perfil">Stefany Espin</h3>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <strong style="color: #d4af37;">Aplicaciones Web</strong>
+                                        <pre style="background-color: #f0f0f0; padding: 1rem; border-radius: 3px; overflow-x: auto;">Stefany Espin - espin-2025-b-sdes-web-gr1</pre>
+
+    <script>
+        // Función para cambiar de sección
+        function showSection(sectionId, event) {
+            event.preventDefault();
+            
+            // Ocultar todas las secciones
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Mostrar la sección seleccionada
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+            
+            // Actualizar estado de los enlaces de navegación
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            event.target.classList.add('active');
+            
+            // Scroll suave al inicio de la página
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Inicializar: la primera sección está activa por defecto
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Página cargada - Felinos Generales activa por defecto');
+        });
+    </script>
+</body>
+</html>
