@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicación de Estilos CSS</title>
+    <link rel="stylesheet" href="css-styles-explained.css">
+</head>
+<body>
+    <header>
+        <h1>📚 Guía Completa de Estilos CSS</h1>
+        <p class="subtitle">Aprende los conceptos fundamentales de CSS de forma clara y práctica</p>
+    </header>
+
+    <nav class="sidebar">
+        <h3>Contenido</h3>
+        <ul>
+            <li><a href="#que-es-css">¿Qué es CSS?</a></li>
+            <li><a href="#selectores">Selectores</a></li>
+            <li><a href="#propiedades-texto">Propiedades de Texto</a></li>
+            <li><a href="#colores">Colores</a></li>
+            <li><a href="#fondos">Fondos</a></li>
+            <li><a href="#caja">Modelo de Caja</a></li>
+            <li><a href="#posicionamiento">Posicionamiento</a></li>
+            <li><a href="#flexbox">Flexbox</a></li>
+            <li><a href="#grid">Grid</a></li>
+            <li><a href="#animaciones">Animaciones</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <!-- Sección 1: ¿Qué es CSS? -->
+        <section id="que-es-css" class="section">
+            <h2>¿Qué es CSS?</h2>
+            <div class="explanation">
+                <p><strong>CSS (Cascading Style Sheets)</strong> es un lenguaje usado para describir la presentación de documentos HTML.</p>
+                <p>CSS controla:</p>
+                <ul>
+                    <li>Colores de texto y fondos</li>
+                    <li>Tamaños de fuentes</li>
+                    <li>Espaciado y márgenes</li>
+                    <li>Bordes y esquinas redondeadas</li>
+                    <li>Posicionamiento de elementos</li>
+                    <li>Animaciones y transiciones</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 2: Selectores -->
+        <section id="selectores" class="section">
+            <h2>Selectores CSS</h2>
+            <p>Los selectores especifican qué elementos HTML deseas estilar.</p>
+            
+            <div class="subsection">
+                <h3>1. Selector de Elementos</h3>
+                <div class="code-example">
+                    <pre><code>p {
+  color: blue;
+}</code></pre>
+                </div>
+                <p class="selector-example-1">Este párrafo tiene el color azul porque se aplicó el selector de elemento.</p>
+            </div>
+
+            <div class="subsection">
+                <h3>2. Selector de Clase</h3>
+                <div class="code-example">
+                    <pre><code>.importante {
+  background-color: yellow;
+  padding: 10px;
+}</code></pre>
+                </div>
+                <p class="importante">Texto con la clase "importante"</p>
+            </div>
+
+            <div class="subsection">
+                <h3>3. Selector de ID</h3>
+                <div class="code-example">
+                    <pre><code>#titulo-principal {
+  font-size: 2em;
+  color: darkblue;
+}</code></pre>
+                </div>
+                <p id="titulo-principal">Elemento con ID único</p>
+            </div>
+
+            <div class="subsection">
+                <h3>4. Selector de Atributo</h3>
+                <div class="code-example">
+                    <pre><code>input[type="text"] {
+  border: 2px solid blue;
+}</code></pre>
+                </div>
+                <input type="text" placeholder="Entrada de texto con atributo">
+            </div>
+
+            <div class="subsection">
+                <h3>5. Selector Descendente</h3>
+                <div class="code-example">
+                    <pre><code>div p {
+  color: green;
+}</code></pre>
+                </div>
+                <div class="contenedor">
+                    <p>Párrafo dentro de un div (color verde)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Propiedades de Texto -->
+        <section id="propiedades-texto" class="section">
+            <h2>Propiedades de Texto</h2>
+            
+            <div class="subsection">
+                <h3>Color del Texto</h3>
+                <div class="code-example">
+                    <pre><code>color: #FF5733;</code></pre>
+                </div>
+                <p class="text-color">Este texto tiene color personalizado</p>
+            </div>
+
+            <div class="subsection">
+                <h3>Tamaño de Fuente</h3>
+                <div class="code-example">
+                    <pre><code>font-size: 24px;</code></pre>
+                </div>
+                <p class="text-size">Texto con tamaño de 24px</p>
+            </div>
+
+            <div class="subsection">
+                <h3>Familia de Fuentes</h3>
+                <div class="code-example">
+                    <pre><code>font-family: 'Arial', sans-serif;</code></pre>
+                </div>
+                <p class="text-family">Texto con fuente Arial</p>
+            </div>
+
+            <div class="subsection">
+                <h3>Peso de Fuente</h3>
+                <div class="code-example">
+                    <pre><code>font-weight: bold;</code></pre>
+                </div>
+                <p class="text-weight">Texto en negrita</p>
+            </div>
+
+            <div class="subsection">
+                <h3>Alineación de Texto</h3>
+                <div class="code-example">
+                    <pre><code>text-align: center;</code></pre>
+                </div>
+                <p class="text-align">Texto centrado en la página</p>
+            </div>
+
+            <div class="subsection">
+                <h3>Altura de Línea</h3>
+                <div class="code-example">
+                    <pre><code>line-height: 1.8;</code></pre>
+                </div>
+                <p class="text-line-height">Este párrafo tiene mayor espaciado entre líneas. Cuando tienes texto largo, esto hace que sea más legible. La altura de línea de 1.8 significa 1.8 veces el tamaño de la fuente.</p>
+            </div>
+        </section>
+
+        <!-- Sección 4: Colores -->
+        <section id="colores" class="section">
+            <h2>Colores en CSS</h2>
+            <p>Existen varias formas de especificar colores:</p>
+            
+            <div class="color-grid">
+                <div class="color-item">
+                    <div class="color-box" style="background-color: red;"></div>
+                    <p><strong>Nombre:</strong> red</p>
+                </div>
+                <div class="color-item">
+                    <div class="color-box" style="background-color: #FF5733;"></div>
+                    <p><strong>Hexadecimal:</strong> #FF5733</p>
+                </div>
+                <div class="color-item">
+                    <div class="color-box" style="background-color: rgb(255, 87, 51);"></div>
+                    <p><strong>RGB:</strong> rgb(255, 87, 51)</p>
+                </div>
+                <div class="color-item">
+                    <div class="color-box" style="background-color: rgba(255, 87, 51, 0.7);"></div>
+                    <p><strong>RGBA:</strong> rgba(255, 87, 51, 0.7)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 5: Fondos -->
+        <section id="fondos" class="section">
+            <h2>Fondos (Backgrounds)</h2>
+            
+            <div class="subsection">
+                <h3>Color de Fondo</h3>
+                <div class="code-example">
+                    <pre><code>background-color: lightblue;</code></pre>
+                </div>
+                <div class="bg-example-1">Caja con fondo azul claro</div>
+            </div>
+
+            <div class="subsection">
+                <h3>Opacidad</h3>
+                <div class="code-example">
+                    <pre><code>background-color: rgba(0, 0, 255, 0.3);</code></pre>
+                </div>
+                <div class="bg-example-2">Fondo con transparencia (opacidad 30%)</div>
+            </div>
+
+            <div class="subsection">
+                <h3>Imagen de Fondo</h3>
+                <div class="code-example">
+                    <pre><code>background-image: url('imagen.jpg');
+background-size: cover;
+background-position: center;</code></pre>
+                </div>
+                <div class="bg-example-3">Fondo con patrón de gradiente</div>
+            </div>
+        </section>
+
+        <!-- Sección 6: Modelo de Caja -->
+        <section id="caja" class="section">
+            <h2>Modelo de Caja (Box Model)</h2>
+            <p>Cada elemento HTML es una caja con 4 capas:</p>
+            
+            <div class="subsection">
+                <h3>Componentes del Box Model</h3>
+                <ul>
+                    <li><strong>Contenido:</strong> El contenido del elemento</li>
+                    <li><strong>Padding:</strong> Espacio dentro de la caja (entre contenido y borde)</li>
+                    <li><strong>Border:</strong> Línea alrededor del padding</li>
+                    <li><strong>Margin:</strong> Espacio fuera de la caja (entre borde y otros elementos)</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>Ejemplo Práctico</h3>
+                <div class="code-example">
+                    <pre><code>div {
+  width: 200px;
+  padding: 20px;      /* Espacio interno */
+  border: 2px solid;  /* Borde */
+  margin: 30px;       /* Espacio externo */
+}</code></pre>
+                </div>
+                <div class="box-model-example">
+                    <p>Este es el contenido</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>Propiedades Individuales</h3>
+                <div class="code-example">
+                    <pre><code>padding-top: 10px;
+padding-right: 15px;
+padding-bottom: 10px;
+padding-left: 15px;
+
+/* O simplificado */
+padding: 10px 15px;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 7: Posicionamiento -->
+        <section id="posicionamiento" class="section">
+            <h2>Posicionamiento</h2>
+            
+            <div class="subsection">
+                <h3>Position: Static (Predeterminado)</h3>
+                <div class="code-example">
+                    <pre><code>position: static;</code></pre>
+                </div>
+                <div class="position-static">Posición estática (flujo normal)</div>
+            </div>
+
+            <div class="subsection">
+                <h3>Position: Relative</h3>
+                <div class="code-example">
+                    <pre><code>position: relative;
+top: 20px;
+left: 30px;</code></pre>
+                </div>
+                <div class="position-relative">Posición relativa al flujo normal</div>
+            </div>
+
+            <div class="subsection">
+                <h3>Position: Absolute</h3>
+                <div class="code-example">
+                    <pre><code>position: absolute;
+top: 50px;
+right: 20px;</code></pre>
+                </div>
+                <div class="position-container">
+                    <div class="position-absolute">Posición absoluta</div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>Position: Fixed</h3>
+                <div class="code-example">
+                    <pre><code>position: fixed;
+bottom: 20px;
+right: 20px;</code></pre>
+                </div>
+                <p class="info-box">El position: fixed mantiene el elemento en su lugar incluso al hacer scroll</p>
+            </div>
+        </section>
+
+        <!-- Sección 8: Flexbox -->
+        <section id="flexbox" class="section">
+            <h2>Flexbox (Flexible Box Layout)</h2>
+            <p>Flexbox es ideal para crear layouts flexibles y responsivos.</p>
+            
+            <div class="subsection">
+                <h3>Propiedades Principales</h3>
+                <div class="code-example">
+                    <pre><code>.contenedor {
+  display: flex;
+  justify-content: center;      /* Alineación horizontal */
+  align-items: center;          /* Alineación vertical */
+  gap: 15px;                    /* Espacio entre items */
+}</code></pre>
+                </div>
+                <div class="flex-example">
+                    <div class="flex-item">Item 1</div>
+                    <div class="flex-item">Item 2</div>
+                    <div class="flex-item">Item 3</div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>Dirección y Envolvimiento</h3>
+                <div class="code-example">
+                    <pre><code>flex-direction: row;        /* row | column */
+flex-wrap: wrap;            /* nowrap | wrap */</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 9: Grid -->
+        <section id="grid" class="section">
+            <h2>CSS Grid</h2>
+            <p>CSS Grid permite crear layouts en dos dimensiones (filas y columnas).</p>
+            
+            <div class="subsection">
+                <h3>Grid Básico</h3>
+                <div class="code-example">
+                    <pre><code>.contenedor {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px;
+  gap: 15px;
+}</code></pre>
+                </div>
+                <div class="grid-example">
+                    <div class="grid-item">1</div>
+                    <div class="grid-item">2</div>
+                    <div class="grid-item">3</div>
+                    <div class="grid-item">4</div>
+                    <div class="grid-item">5</div>
+                    <div class="grid-item">6</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 10: Animaciones -->
+        <section id="animaciones" class="section">
+            <h2>Animaciones y Transiciones</h2>
+            
+            <div class="subsection">
+                <h3>Transiciones</h3>
+                <div class="code-example">
+                    <pre><code>transition: all 0.3s ease;</code></pre>
+                </div>
+                <button class="btn-transition">Haz hover aquí</button>
+            </div>
+
+            <div class="subsection">
+                <h3>Animaciones Keyframes</h3>
+                <div class="code-example">
+                    <pre><code>@keyframes deslizar {
+  from {
+    transform: translateX(-50px);
+  }
+  to {
+    transform: translateX(50px);
+  }
+}
+
+animation: deslizar 2s infinite;</code></pre>
+                </div>
+                <div class="animation-example">Caja animada</div>
+            </div>
+        </section>
+
+        <!-- Tips y Mejores Prácticas -->
+        <section class="section tips">
+            <h2>💡 Consejos y Mejores Prácticas</h2>
+            <ul>
+                <li><strong>Usa clases en lugar de IDs:</strong> Las clases son más reutilizables</li>
+                <li><strong>Mantén CSS organizado:</strong> Agrupa propiedades relacionadas</li>
+                <li><strong>Usa variables CSS:</strong> Facilita mantener consistencia de colores y tamaños</li>
+                <li><strong>Mobile-first:</strong> Diseña primero para dispositivos móviles</li>
+                <li><strong>Evita estilos inline:</strong> Mantén el CSS en archivos separados</li>
+                <li><strong>Especificidad:</strong> Entiende cómo funciona la cascada de CSS</li>
+                <li><strong>Accesibilidad:</strong> Asegúrate de que el contraste sea suficiente</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Guía de CSS | Página educativa sobre estilos CSS</p>
+    </footer>
+</body>
+</html>
