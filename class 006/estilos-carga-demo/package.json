@@ -1,0 +1,12 @@
+{
+  "name": "estilos-carga-demo",
+  "version": "1.0.0",
+  "description": "Demo educativo: diferentes formas de cargar CSS en una página web",
+  "private": true,
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "scripts": {
+    "serve": "http-server . -p 8080 -c-1"
+  }
+}

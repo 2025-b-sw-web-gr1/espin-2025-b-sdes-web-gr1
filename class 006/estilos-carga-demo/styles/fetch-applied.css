@@ -1,0 +1,2 @@
+/* fetch-applied.css: se trae con fetch() y se inserta en un <style> */
+.fetch-applied { font-weight: bold; color: #0a0; background: #efe; padding:6px; }
