@@ -1,0 +1,4 @@
+/* dynamic.css: cargada dinámicamente vía <link> */
+body { border-top: 6px solid #229; }
+
+.dynamic-added { color: #114; }

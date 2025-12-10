@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Demostración: Formas de cargar estilos</title>
+  <!-- Ejemplo: carga externa tradicional -->
+  <link rel="stylesheet" href="styles/external.css">
+
+  <!-- Ejemplo: preload (se carga pronto y se aplica al onload) -->
+  <link rel="preload" href="styles/external.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles/external.css"></noscript>
+
+  <style>
+    /* Ejemplo: estilo interno en la cabecera */
+    .demo-box { padding: 12px; border-radius: 6px; margin: 8px 0; }
+    header { margin-bottom: 18px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Formas de cargar estilos en una página web</h1>
+    <p>Este proyecto muestra varias técnicas: estilo en línea, &lt;style&gt; interno, hoja externa, <code>@import</code>, y carga dinámica vía JavaScript.</p>
+  </header>
+
+  <section class="demo-box">
+    <h2>1) Estilo en atributo (inline)</h2>
+    <p style="color: darkblue; background:#eef; padding:6px;">Este párrafo usa el atributo <code>style="..."</code>.</p>
+  </section>
+
+  <section class="demo-box">
+    <h2>2) Estilo interno (&lt;style&gt; en el documento)</h2>
+    <p class="internal-example">Ejemplo con reglas definidas dentro de la página en un bloque &lt;style&gt;.</p>
+    <style>
+      .internal-example { color: #3a3; background:#efe; padding:6px; }
+    </style>
+  </section>
+
+  <section class="demo-box">
+    <h2>3) Hoja externa (&lt;link rel="stylesheet" href="..."&gt;)</h2>
+    <p class="external-example">Esta regla viene de <code>styles/external.css</code> (y ese archivo hace <code>@import</code> de otro).</p>
+  </section>
+
+  <section class="demo-box">
+    <h2>4) @import dentro de una hoja CSS</h2>
+    <p>El archivo <code>styles/external.css</code> contiene un <code>@import "imported.css"</code>. Es otra forma de encadenar estilos.</p>
+  </section>
+
+  <section class="demo-box">
+    <h2>5) Carga dinámica desde JavaScript</h2>
+    <p>Prueba los botones para cargar estilos dinámicamente (crea elementos &lt;link&gt; o &lt;style&gt;).</p>
+    <button id="btn-load-link">Cargar &lt;link&gt; dinámico</button>
+    <button id="btn-fetch-style">Cargar con <code>fetch()</code></button>
+    <button id="btn-inline-js">Aplicar style via <code>element.style</code></button>
+  </section>
+
+  <section class="demo-box">
+    <h2>6) Ejemplo: evitar bloqueo del render</h2>
+    <p>Usamos <code>rel="preload" as="style" onload="this.rel='stylesheet'"</code> arriba para mostrar una técnica de carga no bloqueante y fallback en <code>&lt;noscript&gt;</code>.</p>
+  </section>
+
+  <footer style="margin-top:20px">
+    <small>Proyecto educativo — carpeta <code>class 006/estilos-carga-demo</code></small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

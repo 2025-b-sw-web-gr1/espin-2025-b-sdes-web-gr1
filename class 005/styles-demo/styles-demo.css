@@ -1,0 +1,54 @@
+/* 2. Estilos externos (archivo .css externo) */
+.external-style {
+    color: #f57c00;
+    font-style: italic;
+    background: #fff3e0;
+    padding: 5px;
+}
+
+/* 5. Estilos para el ejemplo de CDN (Bootstrap) */
+.cdn-style {
+    font-weight: bold;
+    color: #0d6efd;
+    background: #e7f1ff;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+/* Reglas para comparar especificidad */
+/* 1) Selector por TAG (p) */
+p {
+    color: #1565c0;
+    padding: 4px;
+}
+
+/* 2) Selector por CLASS */
+.example-class {
+    color: #2e7d32;
+    background: #e8f5e9;
+    padding: 4px;
+}
+
+/* 3) Selector por ID */
+#example-id {
+    color: #fb8c00;
+    background: #fff8e1;
+    padding: 4px;
+}
+
+/* Clase con !important */
+.important-class {
+    color: #43a047 !important;
+    background: #f0fff4;
+    padding: 4px;
+}
+
+/* Estilo aplicado via JS (clase añadida dinámicamente) */
+.js-applied {
+    color: #6a1b9a;
+    background: #f3e5f5;
+    padding: 6px;
+}
+
+.note { font-size: .95rem; color: #444; margin-bottom: 6px; }
+.compare { display: grid; gap: 6px; max-width: 720px; }

@@ -1,0 +1,7 @@
+/* imported.css: archivo importado por external.css */
+body { background: linear-gradient(180deg,#fff,#f8fbff); }
+
+h1 { color: #114477; }
+
+button { margin-right: 8px; padding:6px 10px; border-radius:4px; border:1px solid #889; background:#eef; cursor:pointer; }
+button:active { transform: translateY(1px); }

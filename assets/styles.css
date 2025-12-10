@@ -1,0 +1,17 @@
+/* styles.css: estilos para la página de inicio del repo */
+:root{--bg:#f6f9ff;--card:#fff;--accent:#276ef1;--muted:#6b7280}
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0;background:var(--bg);color:#0b1020}
+.container{max-width:980px;margin:32px auto;padding:20px}
+.hero{background:linear-gradient(90deg,#ffffff 0%, #f0f6ff 100%);padding:28px;border-radius:12px;box-shadow:0 6px 18px rgba(35,50,80,0.06);}
+.hero h1{margin:0 0 8px;font-size:28px;color:var(--accent)}
+.lead{margin:0;color:var(--muted)}
+.small{font-size:12px;color:#94a3b8;margin-top:8px}
+.cards{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.card{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;background:var(--card);border-radius:10px;border:1px solid #e6eefb;color:#0b1936;text-decoration:none;min-width:140px;box-shadow:0 4px 8px rgba(16,24,40,0.04)}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 20px rgba(16,24,40,0.06)}
+.card.highlight{border-color:var(--accent);box-shadow:0 8px 28px rgba(39,110,241,0.08)}
+.notes{margin-top:20px;background:#fff;padding:14px;border-radius:10px;border:1px solid #eef2ff}
+.notes h3{margin:0 0 8px}
+.footer{margin-top:20px;color:#8892a8;font-size:13px;text-align:center}
+@media (max-width:600px){.cards{flex-direction:column}.container{margin:18px;padding:12px}.hero h1{font-size:20px}}
