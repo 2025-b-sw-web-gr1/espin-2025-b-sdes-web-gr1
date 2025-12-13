@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{titulo}}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .categoria {
+            background: white;
+            padding: 15px;
+            margin: 15px auto;
+            border-radius: 8px;
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .categoria h2 {
+            color: #16a085;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>{{titulo}}</h1>
+
+    {{#each categorias}}
+        <div class="categoria">
+            <h2>{{nombre}}</h2>
+            <ul>
+                {{#each productos}}
+                    <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    {{/each}}
+
+</body>
+</html>
