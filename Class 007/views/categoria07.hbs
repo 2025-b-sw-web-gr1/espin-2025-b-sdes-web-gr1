@@ -47,11 +47,15 @@
         <img src="{{imagen}}" alt="{{titulo}}">
 
         <h3>Materiales disponibles:</h3>
+
         <ul>
-            {{#each materiales}}
-                <li>{{this}}</li>
-            {{/each}}
-        </ul>
+        {{#each materiales}}
+            <li>
+                <strong>{{nombre}}:</strong>
+                {{descripcion}}
+            </li>
+        {{/each}}
+</ul>
 
         <a href="/">⬅ Volver al inicio</a>
     </div>
