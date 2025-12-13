@@ -31,25 +31,25 @@ app.get('/categoria/:tipo', (req, res) => {
             titulo: 'Tuberías',
             descripcion: 'Materiales utilizados para conducción de agua y gas.',
             materiales: ['PVC', 'Cobre', 'Hierro Galvanizado'],
-            imagen: '/images/tuberias.jpg'
+            imagen: '/tuberias.jpg'
         },
         pinturas: {
             titulo: 'Pinturas',
             descripcion: 'Pinturas para interiores y exteriores.',
             materiales: ['Látex', 'Esmalte', 'Acrílica'],
-            imagen: '/images/pinturas.jpg'
+            imagen: '/pinturas.jpg'
         },
         pernos: {
             titulo: 'Pernos',
             descripcion: 'Elementos de fijación para distintas aplicaciones.',
             materiales: ['Hexagonales', 'Allen', 'Rosca fina'],
-            imagen: '/images/pernos.jpg'
+            imagen: '/pernos.jpg'
         },
         electricidad: {
             titulo: 'Electricidad',
             descripcion: 'Materiales eléctricos para instalaciones.',
             materiales: ['Cables', 'Interruptores', 'Tomacorrientes'],
-            imagen: '/images/electricidad.jpg'
+            imagen: '/electricidad.jpg'
         }
     };
 
