@@ -1,42 +1,67 @@
-// Importar dependencias
 const express = require('express');
-const hbs = require('hbs');
 const path = require('path');
 
-// Inicializar app
 const app = express();
 const PORT = 3000;
 
-// Configurar Handlebars como motor de vistas
+// Configuración Handlebars
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Ruta principal
+// Archivos estáticos
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Página principal
 app.get('/', (req, res) => {
-    res.render('index', {
+    res.render('index07', {
         titulo: 'Ferretería El Cóndor',
         categorias: [
-            {
-                nombre: 'Tuberías',
-                productos: ['PVC', 'Cobre', 'Hierro Galvanizado']
-            },
-            {
-                nombre: 'Pinturas',
-                productos: ['Látex', 'Esmalte', 'Acrílica']
-            },
-            {
-                nombre: 'Pernos',
-                productos: ['Hexagonales', 'Allen', 'Rosca fina']
-            },
-            {
-                nombre: 'Electricidad',
-                productos: ['Cables', 'Interruptores', 'Tomacorrientes']
-            }
+            { nombre: 'Tuberías', ruta: 'tuberias' },
+            { nombre: 'Pinturas', ruta: 'pinturas' },
+            { nombre: 'Pernos', ruta: 'pernos' },
+            { nombre: 'Electricidad', ruta: 'electricidad' }
         ]
     });
 });
 
-// Levantar servidor
+// Página por categoría
+app.get('/categoria/:tipo', (req, res) => {
+    const data = {
+        tuberias: {
+            titulo: 'Tuberías',
+            descripcion: 'Materiales utilizados para conducción de agua y gas.',
+            materiales: ['PVC', 'Cobre', 'Hierro Galvanizado'],
+            imagen: '/images/tuberias.jpg'
+        },
+        pinturas: {
+            titulo: 'Pinturas',
+            descripcion: 'Pinturas para interiores y exteriores.',
+            materiales: ['Látex', 'Esmalte', 'Acrílica'],
+            imagen: '/images/pinturas.jpg'
+        },
+        pernos: {
+            titulo: 'Pernos',
+            descripcion: 'Elementos de fijación para distintas aplicaciones.',
+            materiales: ['Hexagonales', 'Allen', 'Rosca fina'],
+            imagen: '/images/pernos.jpg'
+        },
+        electricidad: {
+            titulo: 'Electricidad',
+            descripcion: 'Materiales eléctricos para instalaciones.',
+            materiales: ['Cables', 'Interruptores', 'Tomacorrientes'],
+            imagen: '/images/electricidad.jpg'
+        }
+    };
+
+    const categoria = data[req.params.tipo];
+
+    if (!categoria) {
+        return res.send('Categoría no encontrada');
+    }
+
+    res.render('categoria07', categoria);
+});
+
 app.listen(PORT, () => {
-    console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
+    console.log(`Servidor activo en http://localhost:${PORT}`);
 });

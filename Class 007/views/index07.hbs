@@ -6,31 +6,32 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
+            background: #f4f4f4;
+            text-align: center;
         }
 
         h1 {
-            text-align: center;
-            color: #2c3e50;
+            margin-top: 30px;
         }
 
-        .categoria {
+        .menu {
+            margin-top: 40px;
+        }
+
+        .item {
             background: white;
-            padding: 15px;
+            padding: 20px;
             margin: 15px auto;
+            width: 300px;
             border-radius: 8px;
-            max-width: 400px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
-        .categoria h2 {
+        a {
+            text-decoration: none;
+            font-size: 22px;
             color: #16a085;
-        }
-
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -38,16 +39,13 @@
 
     <h1>{{titulo}}</h1>
 
-    {{#each categorias}}
-        <div class="categoria">
-            <h2>{{nombre}}</h2>
-            <ul>
-                {{#each productos}}
-                    <li>{{this}}</li>
-                {{/each}}
-            </ul>
-        </div>
-    {{/each}}
+    <div class="menu">
+        {{#each categorias}}
+            <div class="item">
+                <a href="/categoria/{{ruta}}">{{nombre}}</a>
+            </div>
+        {{/each}}
+    </div>
 
 </body>
 </html>
