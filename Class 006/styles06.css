@@ -1,0 +1,61 @@
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+line-height: 1.6;
+}
+
+
+header, footer {
+background-color: #003366;
+color: white;
+text-align: center;
+padding: 1rem;
+}
+
+
+nav ul {
+display: flex;
+justify-content: center;
+list-style: none;
+padding: 0;
+background-color: #0055a5;
+}
+
+
+nav a {
+color: white;
+padding: 1rem;
+text-decoration: none;
+}
+
+
+nav a:focus, nav a:hover {
+background-color: #003366;
+outline: 2px solid yellow;
+}
+
+
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 1rem;
+padding: 1rem;
+}
+
+
+article {
+border: 1px solid #ccc;
+padding: 1rem;
+text-align: center;
+}
+
+
+article:focus {
+outline: 3px solid #0055a5;
+}
+
+
+img {
+width: 60px;
+height: 60px;
+}

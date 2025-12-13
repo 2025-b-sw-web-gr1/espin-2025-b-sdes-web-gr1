@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página Accesible</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+<header role="banner">
+<h1>Página Web Accesible</h1>
+</header>
+
+
+<nav role="navigation" aria-label="Menú principal">
+<ul>
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#servicios">Servicios</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+</nav>
+
+
+<main id="inicio" role="main">
+<section aria-labelledby="titulo-servicios">
+<h2 id="titulo-servicios">Nuestros Servicios</h2>
+
+
+<div class="grid">
+<article tabindex="0">
+<img src="assets/icon.svg" alt="Icono de accesibilidad">
+<h3>Accesibilidad</h3>
+<p>Diseñamos sitios web inclusivos.</p>
+</article>
+
+
+<article tabindex="0">
+<img src="assets/icon.svg" alt="Icono de diseño">
+<h3>Diseño Moderno</h3>
+<p>Usamos CSS Grid y Flexbox.</p>
+</article>
+
+
+<article tabindex="0">
+<img src="assets/icon.svg" alt="Icono de estándares">
+<h3>Estándares</h3>
+<p>Aplicamos buenas prácticas W3C.</p>
+</article>
+</div>
+</section>
+</main>
+
+
+<footer role="contentinfo" id="contacto">
+<p>&copy; 2025 - Práctica de Estándares Web</p>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
