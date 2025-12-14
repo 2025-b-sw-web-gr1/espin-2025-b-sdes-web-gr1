@@ -1,0 +1,15 @@
+meta {
+  name: get-players-by-team
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://api.ejemplo.com/teams/1/players
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
