@@ -5,7 +5,7 @@ meta {
 }
 
 get {
-  url: /comments?postId=1
+  url: https://jsonplaceholder.typicode.com/comments?postId=1
   body: none
   auth: inherit
 }
@@ -16,4 +16,5 @@ params:query {
 
 settings {
   encodeUrl: true
+  timeout: 0
 }
