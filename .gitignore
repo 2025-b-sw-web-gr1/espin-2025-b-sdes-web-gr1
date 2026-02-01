@@ -1,0 +1,14 @@
+﻿# Ignore backend artifacts
+Proyect 001/backend/node_modules/
+Proyect 001/backend/dist/
+Proyect 001/backend/build/
+Proyect 001/backend/.env
+Proyect 001/backend/.cache/
+Proyect 001/backend/*.log
+
+# General ignores
+node_modules/
+dist/
+.vscode/
+.env
+.DS_Store
