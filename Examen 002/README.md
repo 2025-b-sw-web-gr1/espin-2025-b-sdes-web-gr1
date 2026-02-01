@@ -17,82 +17,85 @@
   <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
     <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
   <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# Examen 002 — NestJS (Proyecto de evaluación) 🔧
 
-## Description
+**Descripción breve** 💡
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+`Examen 002` es un proyecto de evaluación basado en **NestJS** que sirve para medir conocimientos prácticos en desarrollo de APIs con TypeScript. Incluye un módulo `teams` con controladores, servicios y pruebas (unitarias y e2e) que permiten comprobar rutas, lógica y cobertura de tests.
 
-## Project setup
+---
 
-```bash
-$ npm install
-```
+## 📦 Contenido del repositorio
 
-## Compile and run the project
+- `src/` — código fuente de la aplicación
+  - `main.ts` — arranque de la aplicación
+  - `app.module.ts`, `app.controller.ts`, `app.service.ts` — estructura base de NestJS
+  - `teams/` — módulo con `teams.controller.ts`, `teams.service.ts` y sus pruebas (`*.spec.ts`)
+- `test/` — pruebas end-to-end (e2e)
+- Archivos de configuración: `tsconfig.json`, `tsconfig.build.json`, `eslint.config.mjs`, `package.json`
 
-```bash
-# development
-$ npm run start
+---
 
-# watch mode
-$ npm run start:dev
+## 🎯 Objetivos de evaluación
 
-# production mode
-$ npm run start:prod
-```
+- Implementación correcta de un módulo en NestJS (`teams`).
+- Manejo de rutas y respuestas HTTP (GET/POST/PUT/DELETE).
+- Separación de responsabilidades (Controller / Service).
+- Cobertura mínima de pruebas unitarias y e2e.
+- Uso de ESLint y buenas prácticas de TypeScript.
 
-## Run tests
+---
 
-```bash
-# unit tests
-$ npm run test
+## 🧰 Requisitos y configuración
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+1. Node.js 16+ (recomendado)
+2. Instalar dependencias:
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+npm install
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+3. Comandos útiles:
 
-## Resources
+- `npm run start` — ejecutar en modo producción
+- `npm run start:dev` — modo desarrollo (hot reload)
+- `npm run test` — pruebas unitarias
+- `npm run test:e2e` — pruebas e2e
+- `npm run test:cov` — reporte de cobertura
 
-Check out a few resources that may come in handy when working with NestJS:
+---
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+## 🧪 Cómo ejecutar pruebas
 
-## Support
+- Pruebas unitarias:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+npm run test
+```
 
-## Stay in touch
+- Pruebas end-to-end:
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```bash
+npm run test:e2e
+```
 
-## License
+---
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+## 🔍 Puntos clave para revisar rápidamente
+
+1. Endpoints y rutas en `src/teams/teams.controller.ts`
+2. Lógica y dependencias en `src/teams/teams.service.ts`
+3. Pruebas en `src/teams/*.spec.ts` y `test/app.e2e-spec.ts`
+4. Configuración de ESLint y TypeScript en archivos raíz
+
+---
+
+## ℹ️ Notas finales
+
+Este README explica el propósito del examen y cómo verificar su funcionamiento. Si quieres, puedo añadir instrucciones adicionales o ejemplos de peticiones para los endpoints (`curl` o `HTTPie`). ✅
+
+---
+
+**Autor:** Equipo de evaluación
+
+
