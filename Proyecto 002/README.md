@@ -16,7 +16,7 @@ La API gestiona **equipos (Teams)** y **jugadores (Players)** con una relación 
 ## 📂 Estructura del Proyecto
 
 ```
-Project 001/
+Project 002/
 ├── backend/              # API NestJS con Swagger
 ├── Bruno/                # Pruebas de endpoints
 │   ├── teams/
