@@ -1,11 +1,6 @@
-¡Claro que sí, Damaris! 💙
-Te dejo **el README final listo para copiar y pegar**, alineado **exactamente** con lo que pide el **Proyecto 001** y con lo que **ya tienes en tu estructura** (Bruno + Swagger YAML + Swagger automático en NestJS).
 
-Puedes pegarlo tal cual en **`Project 001/README.md`** 👇
 
----
-
-# 📘 Proyecto 001 – Documentación de Endpoints con Swagger
+# 📘 Proyecto 002 – Documentación de Endpoints con Swagger
 
 ## 📌 Descripción
 
